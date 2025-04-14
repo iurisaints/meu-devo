@@ -5,7 +5,7 @@ import { initializeApp } from "firebase/app";
 import { initializeAuth, getReactNativePersistence } from "firebase/auth";
 // Importe o AsyncStorage
 import ReactNativeAsyncStorage from '@react-native-async-storage/async-storage';
-
+import { getFirestore } from "firebase/firestore"; // <--- ADICIONE ESTA LINHA
 // Remova a importação do getAnalytics se não for usar imediatamente
 // import { getAnalytics } from "firebase/analytics";
 
@@ -38,10 +38,6 @@ const auth = initializeAuth(app, {
 // 4. Exporte 'analytics' se necessário
 
 // Exporta a instância 'auth' configurada para ser usada nos seus serviços
-export { auth };
 
-// Exporte 'app' se for usar outros serviços como Firestore, Storage, etc.
-// export { app, auth };
-
-// Exporte 'analytics' se o tiver inicializado e for usá-lo
-// export { app, auth, analytics };
+const firestore = getFirestore(app);
+export { auth, firestore };
