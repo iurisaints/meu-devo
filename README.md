@@ -1,2 +1,4 @@
 # meu-devo
-Meu Devocional :)
+Meu Devocional :smile:
+
+
